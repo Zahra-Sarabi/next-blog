@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './styles/globals.css';
+import vazirFont from '@/constans/localFonts';
 
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='fa' dir='rtl'>
+    <html lang='fa' dir='rtl' className={`${vazirFont.variable} font-sans`}>
       <body>{children}</body>
     </html>
   );

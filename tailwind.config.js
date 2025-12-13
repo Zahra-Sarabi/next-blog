@@ -9,6 +9,7 @@ export default {
         center: true,
         padding: '1rem',
       },
+      
     },
   },
   plugins: [],
