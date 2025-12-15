@@ -3,7 +3,6 @@
 import { useCallback, useState } from "react";
 import Select from "../ui/Select";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { createUrl } from "@/utils/createUrl";
 
 const sortOptions = [
   {
