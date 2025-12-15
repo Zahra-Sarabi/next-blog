@@ -1,33 +1,30 @@
-"use client";
+'use client';
 
-import NavLink from "./NavLink";
-import { useAuth } from "@/context/AuthContext";
+import NavLink from './NavLink';
 
 const navLinks = [
   {
     id: 1,
-    children: "خانه",
-    path: "/",
+    children: 'خانه',
+    path: '/',
   },
   {
     id: 2,
-    children: "بلاگ ها",
-    path: "/blogs",
+    children: 'بلاگ ها',
+    path: '/blogs',
   },
 ];
 
 function Header() {
-  const { user, isLoading } = useAuth();
-
   return (
     <header
       className={`z-10 shadow-md bg-inherit mb-10 sticky top-0 transition-all duration-200 border-b border-b-secondary-300 ${
-        isLoading ? "blur-sm opacity-70" : "opacity-100 blur-0"
+        false ? 'blur-sm opacity-70' : 'opacity-100 blur-0'
       }`}
     >
-      <nav className="container xl:max-w-screen-xl">
-        <ul className="flex items-center text-secondary-400 justify-between py-2">
-          <div className="flex items-center gap-x-10">
+      <nav className='container xl:max-w-7xl'>
+        <ul className='flex  items-center text-secondary-400 justify-between py-2'>
+          <div className='flex items-center gap-x-10'>
             {navLinks.map((navLink) => {
               return (
                 <li key={navLink.id}>
@@ -37,10 +34,10 @@ function Header() {
             })}
           </div>
           <li>
-            {user ? (
-              <NavLink path="/profile">پروفایل</NavLink>
+            {false ? (
+              <NavLink path='/profile'>پروفایل</NavLink>
             ) : (
-              <NavLink path="/signin">ورود</NavLink>
+              <NavLink path='/signin'>ورود</NavLink>
             )}
           </li>
         </ul>
