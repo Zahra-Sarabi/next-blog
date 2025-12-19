@@ -1,33 +1,33 @@
-import BlogSort from "@/components/blog/BlogSort";
-import CateogryList from "@/components/blog/CateogryList";
-import Search from "@/components/ui/Search";
-import { Spinner } from "@/components/ui/Spinner";
-import { Suspense } from "react";
+import BlogSort from '@/components/blog/BlogSort';
+import CateogryList from '@/components/blog/CateogryList';
+import Search from '@/components/ui/Search';
+import { Spinner } from '@/components/ui/Spinner';
+import { Suspense } from 'react';
 
 const statusOptions = [
   {
-    label: "همه",
-    value: "ALL",
+    label: 'همه',
+    value: 'ALL',
   },
   {
-    label: "باز",
-    value: "OPEN",
+    label: 'باز',
+    value: 'OPEN',
   },
   {
-    label: "بسته",
-    value: "CLOSED",
+    label: 'بسته',
+    value: 'CLOSED',
   },
 ];
 export const metadata = {
-  title: "Blogs",
-  description: "Blogs page description here",
+  title: 'Blogs',
+  description: 'Blogs page description here',
 };
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-secondary-700 mb-12 items-center">
-        <h1 className="text-lg font-bold">لیست بلاگ ها</h1>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 text-secondary-700 mb-12 items-center'>
+        <h1 className='text-lg font-bold'>لیست بلاگ ها</h1>
         {/* REASON OF USING SUSPENSE: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout */}
         <Suspense>
           <Search />
@@ -36,15 +36,13 @@ function Layout({ children }: { children: React.ReactNode }) {
           <BlogSort />
         </Suspense>
       </div>
-      <div className="grid grid-cols-12 gap-8">
-        <div className="col-span-12 lg:col-span-4 xl:col-span-3 lg:pl-8 text-secondary-500 space-y-4">
-          {/* <Suspense fallback={<Spinner />}>
+      <div className='grid grid-cols-12 gap-8'>
+        <div className='col-span-12 lg:col-span-4 xl:col-span-3 lg:pl-8 text-secondary-500 space-y-4'>
+          <Suspense fallback={<Spinner />}>
             <CateogryList />
-          </Suspense> */}
+          </Suspense>
         </div>
-        <main className="col-span-12 lg:col-span-8 xl:col-span-9">
-          {children}
-        </main>
+        <main className='col-span-12 lg:col-span-8 xl:col-span-9'>{children}</main>
       </div>
     </div>
   );
