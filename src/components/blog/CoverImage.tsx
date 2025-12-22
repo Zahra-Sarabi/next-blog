@@ -1,11 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function CoverImage({ slug, coverImageUrl }) {
+export default function CoverImage({
+  slug,
+  coverImageUrl,
+}: {
+  slug: string;
+  coverImageUrl: string;
+}) {
   return (
-    <div className="relative aspect-w-16 aspect-h-9 overflow-hidden rounded-lg mb-6">
+    <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-6">
       <Link href={`/blogs/${slug}`}>
         <Image
+          alt="blog cover image"
           className="object-cover object-center hover:scale-110 transition-all ease-out duration-300"
           fill
           src={coverImageUrl}
